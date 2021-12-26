@@ -4,8 +4,8 @@ import toyproduct.Toy;
 
 public abstract class ToyFactory {
     
-    public Toy produceToy(Integer serialNumber){
-        Toy toy = this.createToy(serialNumber);
+    public Toy produceToy(){
+        Toy toy = this.createToy(SerialNumberGenerator.getInstance().next());
         toy.pack();
         toy.label();
         return toy;
